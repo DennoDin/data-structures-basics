@@ -23,6 +23,18 @@ class Tree {
     return contains;
   }
 
+  remove(value) {
+    for (let i = 0; i < this.children.length; i++) {
+      if (this.children[i].value === value) {
+        this.children.splice(i, 1);
+      }
+      if (this.children[i]) {
+        this.children[i].remove(value);
+      }
+    }
+    return value;
+  }
+
   /*
 +-------------------------+
 | Advanced Requirements!! |
@@ -48,3 +60,13 @@ module.exports = Tree;
 |X                               X
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 */
+
+// let index = this.children.indexOf(value);
+// if (index > -1) {
+//   this.children.splice(index, 1);
+// } else if (this.children.length > 0) {
+//   this.children.forEach((kid) => {
+//     kid.remove(value);
+//   });
+// }
+// return value;
