@@ -19,6 +19,17 @@ class BinarySearchTree {
     }
     return this;
   }
+
+  contains(value) {
+    if (this.value === value) return true;
+    if (this.right === null && this.left === null) return false;
+    if (this.value < value) {
+      return this.right.contains(value);
+    }
+    if (this.value >= value) {
+      return this.left.contains(value);
+    }
+  }
 }
 module.exports = BinarySearchTree;
 /*
