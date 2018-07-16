@@ -12,6 +12,7 @@ class LinkedList {
   }
 
   appendToTail(value) {
+    // complexity = O(1)
     const newNode = new Node(value);
     this.tail.next = newNode;
     this.tail = newNode;
@@ -19,10 +20,12 @@ class LinkedList {
   }
 
   removeHead() {
+    // complexity = O(1)
     this.head = this.head.next;
   }
 
   findNode(value) {
+    //complexity = O(n)
     let currentNode = this.head;
     while (currentNode !== null) {
       if (currentNode.value === value) {
