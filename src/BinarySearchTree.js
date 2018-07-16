@@ -30,7 +30,18 @@ class BinarySearchTree {
       return this.left.contains(value);
     }
   }
+
+  traverseDepthFirstInOrder(callback) {
+    if (this.left) {
+      this.left.traverseDepthFirstInOrder(callback);
+    }
+    callback(this);
+    if (this.right) {
+      this.right.traverseDepthFirstInOrder(callback);
+    }
+  }
 }
+
 module.exports = BinarySearchTree;
 /*
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
