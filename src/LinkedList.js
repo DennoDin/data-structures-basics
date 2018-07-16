@@ -11,12 +11,27 @@ class LinkedList {
     this.tail = this.head;
   }
 
-  appendToTail(value) {}
+  appendToTail(value) {
+    const newNode = new Node(value);
+    this.tail.next = newNode;
+    this.tail = newNode;
+    return this.tail;
+  }
 
-  removeHead() {}
+  removeHead() {
+    this.head = this.head.next;
+  }
 
-  findNode(value) {}
-
+  findNode(value) {
+    let currentNode = this.head;
+    while (currentNode !== null) {
+      if (currentNode.value === value) {
+        return currentNode;
+      }
+      currentNode = currentNode.next;
+    }
+    return "No node with value: " + value + " found.";
+  }
   /*
 +-------------------------+
 | Advanced Requirements!! |

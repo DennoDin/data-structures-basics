@@ -69,7 +69,7 @@ describe("Linked Lists", () => {
       linkedList.appendToTail(3);
       linkedList.appendToTail(6);
       linkedList.appendToTail(2);
-      expect(linkedList.findNode(20)).to.equal("No node with value: 20 found");
+      expect(linkedList.findNode(20)).to.equal("No node with value: 20 found.");
     });
   });
   /*
