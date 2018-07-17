@@ -4,6 +4,7 @@ class BinarySearchTree {
   }
 
   insert(value) {
+    // O(log n)
     if (this.value < value) {
       if (this.right) {
         this.right.insert(value);
@@ -21,6 +22,7 @@ class BinarySearchTree {
   }
 
   contains(value) {
+    // O (log n)
     if (this.value === value) return true;
     if (this.right === null && this.left === null) return false;
     if (this.value < value) {
@@ -32,6 +34,7 @@ class BinarySearchTree {
   }
 
   traverseDepthFirstInOrder(callback) {
+    // O (n)
     if (this.left) {
       this.left.traverseDepthFirstInOrder(callback);
     }

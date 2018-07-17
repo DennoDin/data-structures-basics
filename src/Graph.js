@@ -4,10 +4,12 @@ class Graph {
   }
 
   addNode(value) {
+    // O(1)
     this.nodes[value] = [];
   }
 
   addEdge(node1, node2) {
+    // O(1)
     if (!this.nodes[node1] || !this.nodes[node2]) {
       return "Invalid node value";
     }
@@ -16,20 +18,24 @@ class Graph {
   }
 
   removeNode(node) {
+    // O(n^2)
     for (let key in this.nodes) {
-      let index = this.nodes[key].indexOf(node);
+      // O(n)
+      let index = this.nodes[key].indexOf(node); // O(n)
       if (index !== -1) {
-        this.nodes[key].splice(index, 1);
+        this.nodes[key].splice(index, 1); // O(1)
       }
     }
     delete this.nodes[node];
   }
 
   contains(node) {
+    // O(1)
     return Boolean(this.nodes[node]);
   }
 
   removeEdge(node1, node2) {
+    // O(n)
     const index1 = this.nodes[node1].indexOf(node2);
     const index2 = this.nodes[node2].indexOf(node1);
     this.nodes[node1].splice(index1, 1);
@@ -37,6 +43,7 @@ class Graph {
   }
 
   hasEdge(node1, node2) {
+    // O(n)
     return Boolean(this.nodes[node1].indexOf(node2) >= 0);
   }
 }

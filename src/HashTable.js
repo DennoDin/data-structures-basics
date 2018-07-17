@@ -8,16 +8,19 @@ class HashTable {
   }
 
   insert(key, value) {
-    const index = simpleHash(key, this.limit);
-    this.storage.set(index, value);
+    // O(n)
+    const index = simpleHash(key, this.limit); // O(n)
+    this.storage.set(index, value); // O(1)
   }
 
   retrieve(key) {
+    // O(n)
     const index = simpleHash(key, this.limit);
     return this.storage.get(index);
   }
 
   remove(key) {
+    // O(n)
     const index = simpleHash(key, this.limit);
     this.storage.set(index, null);
   }

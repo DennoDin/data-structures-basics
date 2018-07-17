@@ -24,6 +24,7 @@ class Tree {
   }
 
   remove(value) {
+    // O(n)
     for (let i = 0; i < this.children.length; i++) {
       if (this.children[i].value === value) {
         this.children.splice(i, 1);
@@ -45,9 +46,9 @@ Do not proceed until you are done with the basic
 requirements for ALL data structures in this exercise.
 
 */
-  traverseDepthFirst(fn) {}
+  /*   traverseDepthFirst(fn) {}
 
-  traverseBreadthFirst(fn) {}
+  traverseBreadthFirst(fn) {} */
 }
 
 module.exports = Tree;

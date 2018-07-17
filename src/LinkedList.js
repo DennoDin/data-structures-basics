@@ -44,7 +44,7 @@ The following are part of the advanced requirements.
 Do not proceed until you are done with the basic
 requirements for ALL data structures in this exercise.
 */
-
+  /* 
   forEach(callback) {}
 
   print() {}
@@ -53,7 +53,7 @@ requirements for ALL data structures in this exercise.
 
   insertAfter(refNode, value) {}
 
-  removeAfter(refNode) {}
+  removeAfter(refNode) {} */
 }
 
 module.exports = LinkedList;
