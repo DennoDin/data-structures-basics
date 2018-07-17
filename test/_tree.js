@@ -63,6 +63,21 @@ describe("Trees", () => {
     });
   });
 
+  describe("The remove method", () => {
+    it("should exist on the Tree prototype", () => {
+      expect(Tree.prototype.remove).to.exist;
+    });
+
+    it("should remove a branch from the tree", () => {
+      tree.addChild(2);
+      tree.addChild(3);
+      tree.children[0].addChild(4);
+      tree.children[1].addChild(5);
+      expect(tree.remove(4)).to.equal(4);
+      expect(tree.children[0].children.length).to.equal(0);
+    });
+  });
+
   /*
 +-------------------------+
 | Advanced Requirements!! |
