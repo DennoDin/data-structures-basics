@@ -161,7 +161,7 @@ requirements for ALL data structures in this exercise.
 Uncomment by removing the 'x'.
 */
 
-  xdescribe("The forEach method", () => {
+  describe("The forEach method", () => {
     it("should exist on the Graph prototype", () => {
       expect(Graph.prototype.addEdge).to.exist;
     });
@@ -178,7 +178,7 @@ Uncomment by removing the 'x'.
     });
   });
 
-  xdescribe("The traverseDepthFirst method", () => {
+  describe("The traverseDepthFirst method", () => {
     it("should exist on the Graph prototype", () => {
       expect(Graph.prototype.traverseDepthFirst).to.exist;
     });
@@ -203,7 +203,7 @@ Uncomment by removing the 'x'.
     });
   });
 
-  xdescribe("The traverseBreadthFirst method", () => {
+  describe("The traverseBreadthFirst method", () => {
     it("should exist on the Graph prototype", () => {
       expect(Graph.prototype.traverseBreadthFirst).to.exist;
     });

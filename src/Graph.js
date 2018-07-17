@@ -3,9 +3,9 @@ class Graph {
     this.nodes = {};
   }
 
-  addNode(value) {
+  addNode(key) {
     // O(1)
-    this.nodes[value] = [];
+    this.nodes[key] = [];
   }
 
   addEdge(node1, node2) {
@@ -45,6 +45,50 @@ class Graph {
   hasEdge(node1, node2) {
     // O(n)
     return Boolean(this.nodes[node1].indexOf(node2) >= 0);
+  }
+
+  forEach(callback) {
+    // O(n)
+    const nodeList = Object.keys(this.nodes); // O(n)
+    for (let key in this.nodes) {
+      callback(key, this.nodes[key], nodeList); // O(n)
+    }
+  }
+
+  traverseDepthFirst(startNode, callback) {
+    let memo = {};
+    const recursion = (currentNode) => {
+      callback(currentNode);
+      memo[currentNode] = 1;
+      let edges = this.nodes[currentNode];
+      for (let i = 0; i < edges.length; i++) {
+        if (!memo[edges[i]]) {
+          recursion(edges[i]);
+        }
+      }
+    };
+    recursion(startNode);
+  }
+
+  traverseBreadthFirst(startNode, callback) {
+    let memo = {};
+    callback(startNode);
+    memo[startNode] = 1;
+    const recursion = (currentNode) => {
+      let edges = this.nodes[currentNode];
+      for (let i = 0; i < edges.length; i++) {
+        if (!memo[edges[i]]) {
+          callback(edges[i]);
+        }
+      }
+      for (let i = 0; i < edges.length; i++) {
+        if (!memo[edges[i]]) {
+          memo[edges[i]] = 1;
+          recursion(edges[i]);
+        }
+      }
+    };
+    recursion(startNode);
   }
 }
 
